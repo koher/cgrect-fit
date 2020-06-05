@@ -1,7 +1,7 @@
 import CoreGraphics
 
 extension CGSize {
-    public static func sizeFitting(to size: CGSize, ofAspectRatio aspectRatio: CGFloat) -> CGSize {
+    public static func fitting(to size: CGSize, ofAspectRatio aspectRatio: CGFloat) -> CGSize {
         let outerAspectRatio = size.aspectRatio
         if aspectRatio < outerAspectRatio {
             let height = size.height
@@ -17,7 +17,7 @@ extension CGSize {
     }
     
     public func fitting(to size: CGSize) -> CGSize {
-        Self.sizeFitting(to: size, ofAspectRatio: aspectRatio)
+        Self.fitting(to: size, ofAspectRatio: aspectRatio)
     }
     
     public mutating func fit(to size: CGSize) {
@@ -26,7 +26,7 @@ extension CGSize {
 }
 
 extension CGSize {
-    public static func sizeFilling(_ size: CGSize, ofAspectRatio aspectRatio: CGFloat) -> CGSize {
+    public static func filling(_ size: CGSize, ofAspectRatio aspectRatio: CGFloat) -> CGSize {
         let innerAspectRatio = size.aspectRatio
         if aspectRatio < innerAspectRatio {
             let width = size.width
@@ -42,7 +42,7 @@ extension CGSize {
     }
     
     public func filling(_ size: CGSize) -> CGSize {
-        Self.sizeFilling(size, ofAspectRatio: aspectRatio)
+        Self.filling(size, ofAspectRatio: aspectRatio)
     }
     
     public mutating func fill(_ size: CGSize) {
